@@ -101,10 +101,10 @@ function Signup() {
           
         }} loop={true} slidesPerView={1} spaceBetween={50} pagination={{clickable:true} }>
             <SwiperSlide className="h-[75vh]">
-            <div className="right w-full h-full bg-[url('./authh.jpg')] bg-cover bg-center rounded-xl bg-no-repeat"></div>
+            <div className="right w-full h-[75vh] bg-[url('./authh.jpg')] bg-cover bg-center rounded-xl bg-no-repeat"></div>
             </SwiperSlide>
             <SwiperSlide className="h-[75vh]">
-            <div className="right w-full h-full bg-[url('./auth2.jpg')] bg-cover bg-center rounded-xl bg-no-repeat"></div>
+            <div className="right w-full h-[75vh] bg-[url('./auth2.jpg')] bg-cover bg-center rounded-xl bg-no-repeat"></div>
             </SwiperSlide>
             
 
