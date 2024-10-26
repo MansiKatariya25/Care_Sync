@@ -5,7 +5,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-function Main() {
+function RightComp() {
   return (
     <div>
       <div className="flex flex-col gap-2 left p-6">
@@ -76,4 +76,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default RightComp;

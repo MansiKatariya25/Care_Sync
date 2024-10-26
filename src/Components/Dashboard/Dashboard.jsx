@@ -1,13 +1,14 @@
 import React from 'react'
 import SideBar from './SideBar'
-import Main from './main'
+import RightComp from './RightComp'
+
 
 
 function Dashboard() {
   return (
     <div className='flex'>
       <SideBar/>
-      <Main/>
+      <RightComp/>
     </div>
   )
 }
