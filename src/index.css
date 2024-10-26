@@ -25,3 +25,11 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+.swiper-pagination-bullet {
+  background-color: white;
+
+}
+.swiper-pagination-bullet-active {
+  background-color: aqua;
+}

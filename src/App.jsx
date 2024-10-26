@@ -1,19 +1,20 @@
-import { useState } from 'react'
-import Navbar from './Components/Navbar'
-import Top from './Components/Top'
-import Middle from './Components/Middle'
-import Bottom from './Components/Bottom'
+import Home from './Components/Landing Page/Home'
+import { BrowserRouter, Routes ,Route} from 'react-router-dom'
+import Login from './Components/Authentication/Login'
+import Signup from './Components/Authentication/Signup'
+import Dashboard from './Components/Dashboard/Dashboard'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  
   return (
-    <div>
-      <Navbar/>
-      <Top/>
-      <Middle/>
-      <Bottom/>
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<Home/>}/>
+      <Route path="/login" element={<Login/>}/>
+      <Route path="/signup" element={<Signup/>}/>
+      <Route path="/dashboard" element={<Dashboard/>}/>
+    </Routes>
+    </BrowserRouter>
   )
 }
 
