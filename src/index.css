@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply overflow-x-hidden bg-[#F7F6F6]; 
+}
+*{
+   @apply p-0 m-0 font-raleway;
+}
+.divBg{
+  background-image: url(https://www.hairholistic.ca/cdn/shop/products/virtual-consultation-326009.jpg?v=1685611106);
+  background-position:center;
+  background-size:cover;
+}
+.div2Bg{
+  background-image: url(https://media.istockphoto.com/id/1947829039/photo/smiling-dark-skinned-girl-sitting-on-a-sofa-with-a-phone-in-hands.jpg?b=1&s=612x612&w=0&k=20&c=Boi72o2tmdDgovFWywiWjQih28cN9_mQAQDT2JgjPyI=);
+  background-position:center;
+  background-size:cover;
+}
+
+.wellBeing {
+  background-image: url(https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/a0/79/d5/received-401359710507440.jpg?w=1000&h=1000&s=1);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
