@@ -7,6 +7,7 @@ body {
 }
 *{
    @apply p-0 m-0 font-raleway;
+
 }
 .divBg{
   background-image: url(https://www.hairholistic.ca/cdn/shop/products/virtual-consultation-326009.jpg?v=1685611106);

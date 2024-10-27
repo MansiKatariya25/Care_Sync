@@ -6,7 +6,7 @@ import RightComp from './RightComp'
 
 function Dashboard() {
   return (
-    <div className='flex'>
+    <div className='flex w-[100vw] h-[100vh] overflow-x-hidden'>
       <SideBar/>
       <RightComp/>
     </div>
