@@ -9,7 +9,7 @@ function RightComp() {
   return (
     <div className="flex ">
       <div className=" left flex flex-col gap-2 p-7">
-        <div className="bg-[url('./asset/lblue.jpg')] flex gap-10 border bg-cover rounded-3xl w-[68vw] h-[55vh] p-4">
+        <div className="bg-[url('./asset/heart.avif')] bg-center flex gap-10 border bg-cover bg-no-repeat rounded-3xl w-[68vw] h-[55vh] p-4">
           <div >
             <p className="text-white text-3xl w-[15vw]">Your Health overview</p>
             <div className="flex flex-col justify-between bg-slate-600/40 backdrop-blur-md backdrop-filter rounded-3xl w-[15vw] h-[40vh] p-4">
@@ -108,8 +108,8 @@ function RightComp() {
               </div>
             </div>
             <div className="w-[30vw] h-[55vh] -translate-y-10">
-            <video className="rounded-xl absolute translate-y-20" src="./asset/dna.mp4" muted autoPlay loop playsInline>
-            </video>
+            {/* <video className="rounded-xl absolute translate-y-20" src="./asset/dna.mp4" muted autoPlay loop playsInline>
+            </video> */}
             <img
                 src="./asset/human.png"
                 className="absolute w-[280px] h-[420px] translate-x-20"

@@ -1,23 +1,20 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function SideBar() {
   return (
-    <div className="">
-      <div className="w-[8vw] h-[100vh] p-6 gap-20 flex flex-col justify-evenly items-center">
-        <img
-          src="./asset/logo.jpeg"
-          className="w-[60px] h-[60px] rounded-full"
-        />
+    <>
+      <div className="w-[8vw] h-[100vh] p-6  flex flex-col justify-evenly items-center">
         <div className="flex flex-col">
-          <div className="relative group flex flex-col items-center">
+        <Link to="/dashboard"><div className="relative group flex flex-col items-center">
             <img 
               src="./asset/home.png" 
               className="w-[40px] h-[40px]" 
             />
-            <p className="p-1 rounded text-sm opacity-0 group-hover:opacity-100  duration-300">
+            <p className="p-1 text-sm opacity-0 group-hover:opacity-100  duration-300">
               Home
             </p>
-          </div>
+          </div></Link>
 
           <div className="relative group flex flex-col items-center">
             <img 
@@ -37,7 +34,7 @@ function SideBar() {
               Diagnose
             </p>
           </div>
-          <div className="relative group flex flex-col items-center">
+          <Link to="/family"><div className="relative group flex flex-col items-center">
             <img 
               src="./asset/family.png" 
               className="w-[40px] h-[40px]" 
@@ -45,7 +42,7 @@ function SideBar() {
             <p className="p-1 rounded text-[13px] opacity-0 group-hover:opacity-100  duration-300">
               Add family 
             </p>
-          </div>
+          </div></Link>
           <div className="relative group flex flex-col items-center">
             <img 
               src="./asset/yoga.png" 
@@ -65,7 +62,7 @@ function SideBar() {
           />
         </div>
       </div>
-    </div>
+      </>
   );
 }
 
