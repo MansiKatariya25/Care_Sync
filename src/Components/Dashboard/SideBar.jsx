@@ -25,7 +25,7 @@ function SideBar() {
               Progress
             </p>
           </div>
-          <div className="relative group flex flex-col items-center">
+          <Link to="/diagnose"><div className="relative group flex flex-col items-center">
             <img 
               src="./asset/stethoscope.png" 
               className="w-[40px] h-[40px]" 
@@ -33,7 +33,7 @@ function SideBar() {
             <p className="p-1 rounded text-sm opacity-0 group-hover:opacity-100  duration-300">
               Diagnose
             </p>
-          </div>
+          </div></Link>
           <Link to="/family"><div className="relative group flex flex-col items-center">
             <img 
               src="./asset/family.png" 

@@ -5,6 +5,9 @@ import Signup from './Components/Authentication/Signup'
 import Dashboard from './Components/Dashboard/Dashboard'
 import Family from './Components/Family/Family'
 import Add from './Components/Family/Add'
+import Popup from './Components/Dashboard/Popup'
+
+import Questions from './Components/Diagnose/Questions'
 
 function App() {
   
@@ -17,6 +20,9 @@ function App() {
       <Route path="/dashboard" element={<Dashboard/>}/>
       <Route path="/family"  element={<Family/>}/>
       <Route path="/add" element={<Add/>}/>
+      <Route path="/popup" element={<Popup/>}/>
+      <Route path="/diagnose" element={<Questions/>}/>
+      
     </Routes>
     </BrowserRouter>
   )

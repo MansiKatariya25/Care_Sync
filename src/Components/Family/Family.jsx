@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Navbar from "../Common/Navbar";
-import SideBar from "../Dashboard/SideBar";
 import Details from "./Details";
 import Add from "./Add";
 
