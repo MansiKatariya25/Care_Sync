@@ -8,8 +8,11 @@ import Add from './Components/Family/Add'
 import Popup from './Components/Dashboard/Popup'
 
 import Questions from './Components/Diagnose/Questions'
+import axios from 'axios'
 
 function App() {
+  
+  axios.defaults.baseURL = "http://localhost:8800"
   
   return (
     <BrowserRouter>

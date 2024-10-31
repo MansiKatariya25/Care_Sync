@@ -1,16 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import "swiper/css"
 import "swiper/css/pagination"
 import { Navigation, Pagination } from "swiper/modules";
 import { SwiperSlide,Swiper } from "swiper/react";
 import Navbar from "../Common/Navbar";
+import axios from "axios";
+import { useNavigate } from "react-router";
+ 
 
 function Signup() {
   const [visible, setVisible] = React.useState(false);
+  const [fname,setFname] = useState("")
+  const [lname,setLname] = useState("")
+  const [email,setEmail] = useState("")
+  const [password,setPassword] = useState("")
+  const useNav = useNavigate()
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    try {
+      const response = await axios.post("/auth/signup",{fname,lname,email,password})
+      
+      if(response.status == 200){
+        useNav("/dashboard")
+      }
+    } catch (error) {
+      console.log(error);
+      alert(error.response.data)
+    }
   };
+
+
   return (
     <>
     <Navbar/>
@@ -37,6 +57,8 @@ function Signup() {
                 name="fname"
                 required
                 id=""
+                value={fname}
+                onChange={(e)=>(setFname(e.target.value))}
                 className="outline-none border-b-2 bg-transparent text-black font-bold"
               />
             </div>
@@ -48,6 +70,8 @@ function Signup() {
                 type="text"
                 name="lname"
                 required
+                value={lname}
+                onChange={(e)=>(setLname(e.target.value))}
                 id=""
                 className="outline-none bg-transparent border-b-2 text-black font-bold"
               />
@@ -63,6 +87,8 @@ function Signup() {
                 name="email"
                 id=""
                 required
+                value={email}
+                onChange={(e)=>(setEmail(e.target.value))}
                 className="outline-none border-b-2 border-gray-200 bg-transparent text-black font-bold"
               />
               <img src="./mail.svg" alt="" />
@@ -78,6 +104,8 @@ function Signup() {
                 name="password"
                 id=""
                 required
+                value={password}
+                onChange={(e)=>(setPassword(e.target.value))}
                 className="outline-none border-b-2 border-gray-200 bg-transparent text-black font-bold"
               />
               <img

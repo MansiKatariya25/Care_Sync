@@ -1,16 +1,29 @@
-import React from "react";
-
+import React, { useState } from "react";
 import "swiper/css"
 import "swiper/css/pagination"
 import { Navigation, Pagination } from "swiper/modules";
 import { SwiperSlide,Swiper } from "swiper/react";
 import Navbar from "../Common/Navbar";
+import axios from "axios";
+import { useNavigate } from "react-router";
 
 function Login() {
  const [visible, setVisible] = React.useState(false)
+ const [email,setEmail] = useState("")
+ const[password,setPassword] = useState("")
+ const useNav = useNavigate()
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
+        try {
+          const response = await axios.post("/auth/login",{email,password})
+          if(response.status == 200){
+            useNav("/dashboard")
+          }
+          
+        } catch (error) {
+         alert(error.response.data) 
+        }
       };
   return (
     <>
@@ -36,6 +49,8 @@ function Login() {
                 name="email"
                 id="email"
                 required
+                value={email}
+                onChange={(e)=>(setEmail(e.target.value))}
                 className="outline-none border-b-2 border-gray-200 bg-transparent text-black font-bold"
               />
               <img src="./mail.svg" alt="" />
@@ -51,6 +66,8 @@ function Login() {
                 name="password"
                 id="pass"
                 required
+                value={password}
+                onChange={(e)=>(setPassword(e.target.value))}
                 className="outline-none border-b-2 border-gray-200 bg-transparent text-black font-bold"
               />
               <img src={visible? "./visible.svg" : "./no-visible.svg"} onClick={() => setVisible(!visible)} />
