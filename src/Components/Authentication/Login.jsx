@@ -18,11 +18,15 @@ function Login() {
         try {
           const response = await axios.post("/auth/login",{email,password})
           if(response.status == 200){
+            localStorage.setItem('token',response.data.token)
             useNav("/dashboard")
+
+           
           }
           
         } catch (error) {
          alert(error.response.data) 
+       
         }
       };
   return (

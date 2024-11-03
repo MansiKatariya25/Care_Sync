@@ -22,6 +22,7 @@ function Signup() {
       const response = await axios.post("/auth/signup",{fname,lname,email,password})
       
       if(response.status == 200){
+        localStorage.setItem('token',response.data.token)
         useNav("/dashboard")
       }
     } catch (error) {

@@ -58,6 +58,19 @@ function Add({ changeState }) {
                 </div>
                 <div className="flex flex-col bg-white rounded-xl p-2">
                   <label htmlFor="name" className="text-gray-400 font-bold">
+                    Gender
+                  </label>
+                  <input
+                    type="text"
+                    name="gender"
+                    required
+                    className="outline-none border-b-2 border-gray-200 bg-transparent text-black font-bold"
+                  />
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="flex flex-col bg-white rounded-xl p-2">
+                  <label htmlFor="name" className="text-gray-400 font-bold">
                     Height
                   </label>
                   <input
@@ -67,8 +80,6 @@ function Add({ changeState }) {
                     className="outline-none border-b-2 border-gray-200 bg-transparent text-black font-bold"
                   />
                 </div>
-              </div>
-              <div className="flex gap-4">
                 <div className="flex flex-col bg-white rounded-xl p-2">
                   <label htmlFor="name" className="text-gray-400 font-bold">
                     Weight
@@ -76,17 +87,6 @@ function Add({ changeState }) {
                   <input
                     type="text"
                     name="weight"
-                    required
-                    className="outline-none border-b-2 border-gray-200 bg-transparent text-black font-bold"
-                  />
-                </div>
-                <div className="flex flex-col bg-white rounded-xl p-2">
-                  <label htmlFor="name" className="text-gray-400 font-bold">
-                    BMI
-                  </label>
-                  <input
-                    type="text"
-                    name="bmi"
                     required
                     className="outline-none  border-b-2 border-gray-200 bg-transparent text-black font-bold"
                   />

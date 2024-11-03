@@ -85,7 +85,17 @@ function Popup() {
                 />
               </div>
               </div>
-              
+              <div className="flex flex-col w-[45%] bg-white rounded-xl p-2">
+                <label htmlFor="name" className="text-gray-400 font-bold">
+                  Target BMI 
+                </label>
+                <input
+                  type="text"
+                  name="Tbmi"
+                  required
+                  className="outline-none  border-b-2 border-gray-200 bg-transparent text-black font-bold"
+                />
+              </div>
               <button className="text-white bg-black p-2 rounded-3xl">Submit</button>
             </div>
           </form>

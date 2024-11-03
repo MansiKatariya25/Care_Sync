@@ -3,18 +3,18 @@ const connectDb = require('./Models/conn');
 const User = require('./Models/User');
 const app = express()
 const cors = require('cors');
+require('dotenv').config()
+const PORT = process.env.PORT
 const AuthRoutes = require('./Routes/Auth')
+const FamilyRoutes = require('./Routes/Family');
+const jwtverify = require('./Models/JWT');
 app.use(express.json())
 app.use(cors())
+
 connectDb()
-
-const checkdb = async() => {
-    const user = User.find()
-}
-checkdb()
-
 app.use('/auth',AuthRoutes)
+app.use('/family',FamilyRoutes)
 
-app.listen(8800,()=>{
-    console.log("Running...");
+app.listen(PORT,()=>{
+    console.log("Running..."+PORT);
 })

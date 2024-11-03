@@ -13,6 +13,8 @@ import axios from 'axios'
 function App() {
   
   axios.defaults.baseURL = "http://localhost:8800"
+  axios.defaults.headers.authorization = localStorage.getItem('token')
+ 
   
   return (
     <BrowserRouter>
