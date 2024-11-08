@@ -52,3 +52,15 @@ module.exports.signup = async (req, res) => {
     return res.status(503).send(error);
   }
 };
+
+module.exports.UserData = async (req,res) => {
+  try {
+    
+    const user = await User.find({email:req.email})
+    if(user.length>0){
+      return res.status(200).send(user)
+    } 
+  } catch(error) {
+    return res.status(404).send("data not found")
+  }
+}

@@ -15,6 +15,7 @@ connectDb()
 app.use('/auth',AuthRoutes)
 app.use('/family',FamilyRoutes)
 
+
 app.listen(PORT,()=>{
     console.log("Running..."+PORT);
 })

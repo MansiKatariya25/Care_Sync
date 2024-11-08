@@ -1,28 +1,25 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import SideBar from "../Dashboard/SideBar";
+import { DataProvider } from "../../App";
+
 
 function Details({ changeState }) {
-  const details = [
-    {
-      name: "Mansi katariya",
-      relation: "xyz",
-      age: "20",
-      gender: "xyz",
-      height: "xyz",
-      weight: "40",
-      bmi: "20",
-    },
-    {
-      name: "Raj Singh",
-      relation: "xyz",
-      age: "20",
-      gender: "xyz",
-      height: "xyz",
-      weight: "50",
-      bmi: "20",
-    },
-  ];
 
+  const {Fam} = useContext(DataProvider)  
+  const [filtered,setFilter] = useState()
+  useEffect(()=>{
+    setFilter(Fam) 
+  },[Fam])
+  const handlefilter = (e) => {
+    // console.log(e)
+    const filtered = Fam.filter((value, index) => {
+      console.log(value)
+      if(value.name.toLowerCase().includes(e.toLowerCase())){
+        return value
+      }
+    })
+    setFilter(filtered)
+  }
   const handlePopup = () => {
     changeState();
   };
@@ -38,6 +35,7 @@ function Details({ changeState }) {
                 type="text"
                 placeholder="Search your family members here......"
                 className="p-2 rounded-lg outline-none w-full"
+                onChange={(e)=>(handlefilter(e.target.value))}
               />
               <button className="bg-black text-white p-2 w-24  rounded-lg">
                 Search
@@ -63,7 +61,7 @@ function Details({ changeState }) {
               <p className="w-[4vw] text-center">BMI</p>
             </div>
             <div className="flex flex-col h-[85%] gap-6 overflow-y-scroll">
-              {details.map((items, i) => {
+              {filtered ? filtered.map((items, i) => {
                 return (
                   <div
                     className="flex p-4 gap-24 align-middle bg-white text-black rounded-xl"
@@ -79,7 +77,7 @@ function Details({ changeState }) {
                     <p className="w-[4vw] text-center">{items.bmi}</p>
                   </div>
                 );
-              })}
+              }) : " "}
             </div>
           </div>
         </div>

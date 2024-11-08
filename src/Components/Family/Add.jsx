@@ -1,8 +1,26 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 
 function Add({ changeState }) {
-  const handleSubmit = (event) => {
+  const [name,setName] = useState("")
+  const [relation,setRelation] = useState("")
+  const [age,setAge] = useState("")
+  const [gender,setGender] = useState("")
+  const [height,setHeight] = useState("")
+  const [weight,setWeight] = useState("")
+  const [bmi,setBmi] = useState("")
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    try {
+      const response = await axios.post('/family/add',{name:name,relation:relation,age:age,gender:gender,height:height,weight:weight,bmi:bmi})
+
+      changeState()
+      
+    } catch(error) {
+       console.error(error)
+    }
+ 
   };
 
   return (
@@ -29,83 +47,97 @@ function Add({ changeState }) {
                     type="text"
                     name="name"
                     required
+                    value={name}
+                    onChange={(e)=>(setName(e.target.value))}
                     className="outline-none border-b-2 border-gray-200 bg-transparent text-black font-bold"
                   />
                 </div>
                 <div className="flex flex-col bg-white rounded-xl p-2">
-                  <label htmlFor="name" className="text-gray-400 font-bold ">
+                  <label htmlFor="relation" className="text-gray-400 font-bold ">
                     Relation
                   </label>
                   <input
                     type="text"
                     name="relation"
                     required
+                    value={relation}
+                    onChange={(e)=>(setRelation(e.target.value))}
                     className="outline-none border-b-2 border-gray-200 bg-transparent text-black font-bold"
                   />
                 </div>
               </div>
               <div className="flex gap-4">
                 <div className="flex flex-col bg-white rounded-xl p-2">
-                  <label htmlFor="name" className="text-gray-400 font-bold">
+                  <label htmlFor="age" className="text-gray-400 font-bold">
                     Age
                   </label>
                   <input
                     type="text"
                     name="age"
                     required
+                    value={age}
+                    onChange={(e)=>(setAge(e.target.value))}
                     className="outline-none border-b-2 border-gray-200 bg-transparent text-black font-bold"
                   />
                 </div>
                 <div className="flex flex-col bg-white rounded-xl p-2">
-                  <label htmlFor="name" className="text-gray-400 font-bold">
+                  <label htmlFor="gender" className="text-gray-400 font-bold">
                     Gender
                   </label>
                   <input
                     type="text"
                     name="gender"
                     required
+                    value={gender}
+                    onChange={(e)=>(setGender(e.target.value))}
                     className="outline-none border-b-2 border-gray-200 bg-transparent text-black font-bold"
                   />
                 </div>
               </div>
               <div className="flex gap-4">
                 <div className="flex flex-col bg-white rounded-xl p-2">
-                  <label htmlFor="name" className="text-gray-400 font-bold">
+                  <label htmlFor="height" className="text-gray-400 font-bold">
                     Height
                   </label>
                   <input
                     type="text"
                     name="height"
                     required
+                    value={height}
+                    onChange={(e)=>{setHeight(e.target.value)}}
                     className="outline-none border-b-2 border-gray-200 bg-transparent text-black font-bold"
                   />
                 </div>
                 <div className="flex flex-col bg-white rounded-xl p-2">
-                  <label htmlFor="name" className="text-gray-400 font-bold">
+                  <label htmlFor="weight" className="text-gray-400 font-bold">
                     Weight
                   </label>
                   <input
                     type="text"
                     name="weight"
                     required
+                    value={weight}
+                    onChange={(e)=>(setWeight(e.target.value))}
                     className="outline-none  border-b-2 border-gray-200 bg-transparent text-black font-bold"
                   />
                 </div>
                 </div>
                 <div className="flex flex-col w-[46%] bg-white rounded-xl p-2">
-                  <label htmlFor="name" className="text-gray-400 font-bold">
+                  <label htmlFor="bmi" className="text-gray-400 font-bold">
                     BMI
                   </label>
                   <input
                     type="text"
                     name="bmi"
                     required
+                    value={bmi}
+                    onChange={(e)=>(setBmi(e.target.value))}
                     className="outline-none border-b-2 border-gray-200 bg-transparent text-black font-bold"
                   />
                 </div>
               
 
-              <button className="text-white bg-black p-2 rounded-3xl">
+              <button type="submit" className="text-white bg-black p-2 rounded-3xl" >
                 Submit
               </button>
             </div>

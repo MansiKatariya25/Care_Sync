@@ -21,12 +21,10 @@ function Login() {
             localStorage.setItem('token',response.data.token)
             useNav("/dashboard")
 
-           
+           console.log(response)
           }
-          
         } catch (error) {
          alert(error.response.data) 
-       
         }
       };
   return (
@@ -42,7 +40,6 @@ function Login() {
           New to our platform? <span className="text-orange-400 hover:underline cursor-pointer transition-all duration-300">Signup</span>
         </p>
         <form onSubmit={handleSubmit} className="text-sm gap-2 flex flex-col">
-        
           <div className="flex flex-col w-[50%] bg-white p-4 rounded-xl">
             <label htmlFor="email" className="text-gray-400 font-bold">
               Email

@@ -57,7 +57,7 @@ function Signup() {
                 type="text"
                 name="fname"
                 required
-                id=""
+                id="fname"
                 value={fname}
                 onChange={(e)=>(setFname(e.target.value))}
                 className="outline-none border-b-2 bg-transparent text-black font-bold"
@@ -73,7 +73,7 @@ function Signup() {
                 required
                 value={lname}
                 onChange={(e)=>(setLname(e.target.value))}
-                id=""
+                id="lname"
                 className="outline-none bg-transparent border-b-2 text-black font-bold"
               />
             </div>
@@ -86,7 +86,7 @@ function Signup() {
               <input
                 type="text"
                 name="email"
-                id=""
+                id="email"
                 required
                 value={email}
                 onChange={(e)=>(setEmail(e.target.value))}
@@ -103,7 +103,7 @@ function Signup() {
               <input
                 type={visible ? "text" : "password"}
                 name="password"
-                id=""
+                id="pass"
                 required
                 value={password}
                 onChange={(e)=>(setPassword(e.target.value))}
