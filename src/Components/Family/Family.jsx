@@ -1,16 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Navbar from "../Common/Navbar";
 import Details from "./Details";
 import Add from "./Add";
+import { DataProvider } from "../../App";
 
 function Family() {
-  const [isOpen, setOpen] = useState(false);
+  
 
-  const changeState = ()=>{
-    
-    setOpen(prevVal=>(!prevVal))
-  }
-
+  const {changeState,isOpen} = useContext(DataProvider)
   return (
     <div className="w-[100vw] h-[100vh]">
       <div className="absolute">

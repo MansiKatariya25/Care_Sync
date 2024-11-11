@@ -3,9 +3,9 @@ import SideBar from "../Dashboard/SideBar";
 import { DataProvider } from "../../App";
 
 
-function Details({ changeState }) {
+function Details() {
 
-  const {Fam} = useContext(DataProvider)  
+  const {Fam,changeState} = useContext(DataProvider)  
   const [filtered,setFilter] = useState()
   useEffect(()=>{
     setFilter(Fam) 

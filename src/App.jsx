@@ -16,6 +16,8 @@ function App() {
   axios.defaults.headers.authorization = localStorage.getItem("token");
 
   const [Fam,setFam] = useState("")
+  const [user,setUser] = useState("")
+  const [isOpen, setOpen] = useState(false);
 
   useEffect(()=>{
     const getfam = async () => {
@@ -31,8 +33,26 @@ function App() {
     getfam()
   },[])
 
+  useEffect(()=>{
+    const getuser = async ()=> {
+      try {
+        const response = await axios.get('/auth/userdata');
+        console.log(response.data);
+        setUser(response.data);
+      } catch(error) {
+        console.log(error);
+      }
+    }
+    getuser()
+  },[])
+
+
+  const changeState = ()=>{
+    setOpen(prevVal=>(!prevVal))
+  }
+
   return (
-    <DataProvider.Provider value={{Fam:Fam}}>
+    <DataProvider.Provider value={{Fam:Fam ,changeState, isOpen,user:user}}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />

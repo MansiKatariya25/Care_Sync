@@ -4,13 +4,7 @@ import RightComp from './RightComp'
 import Session from '../session'
 import Navbar from '../Common/Navbar'
 
-
-
-
-
 function Dashboard() {
- 
-
 
   return (
     <div className='flex flex-col w-[100vw] h-[100vh] overflow-x-hidden'>
